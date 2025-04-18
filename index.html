@@ -16,7 +16,10 @@
         </ul>
     </nav>
     <div class="main-content">
-      <img class="signature" alt="Thomas Bjelbo" src="signature.svg">
+      <div class="signature">
+        <img alt="Thomas Bjelbo" src="signature.svg">
+        <p id="subTitle" class="sub-title">Let's build software together</p>
+      </div>
       <div id="infoBox" class="info-box hide">
       </div>
     </div>
@@ -26,15 +29,19 @@
     });
 
     document.getElementById('home').addEventListener('click', function () {
-        document.getElementById('body').classList.replace('bottom', 'top');
-        document.getElementById('infoBox').classList.replace('fadeShow', 'fadeHide');
+        document.getElementById('body').classList.replace('dark', 'light');
+        document.getElementById('infoBox').classList.replace('fadeShow', 'fadeHide'); 
+        setTimeout(function(){
+          document.getElementById('subTitle').classList.remove('hide');
+        }, 500)        
     });
 
     function addContentClasses() {        
-	document.getElementById('body').classList.remove('top');        
-        document.getElementById('body').classList.add('bottom');
+	      document.getElementById('body').classList.remove('light');        
+        document.getElementById('body').classList.add('dark');
         document.getElementById('infoBox').classList.remove('hide', 'fadeHide');
-        document.getElementById('infoBox').classList.add('fadeShow');
+        document.getElementById('infoBox').classList.add('fadeShow');        
+        document.getElementById('subTitle').classList.add('hide');
     }
   </script>
 
