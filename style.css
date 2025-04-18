@@ -152,7 +152,7 @@ body.top {
     }
 }
 
-@media (max-width: 650px) or ((max-width: 1000px) and (-webkit-min-device-pixel-ratio: 2)) {
+@media (max-width: 650px) or ((max-width: 650px) and (-webkit-min-device-pixel-ratio: 2)) {
     .signature {
        margin-top: 90px;
        margin-left: 50px;
