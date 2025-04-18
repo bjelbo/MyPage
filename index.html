@@ -30,7 +30,8 @@
 
     document.getElementById('home').addEventListener('click', function () {
         document.getElementById('body').classList.replace('dark', 'light');
-        document.getElementById('infoBox').classList.replace('fadeShow', 'fadeHide'); 
+        document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
+        document.getElementById('infoBox').classList.add('hide'); 
         setTimeout(function(){
           document.getElementById('subTitle').classList.remove('hide');
         }, 500)        
@@ -39,9 +40,9 @@
     function addContentClasses() {        
 	      document.getElementById('body').classList.remove('light');        
         document.getElementById('body').classList.add('dark');
-        document.getElementById('infoBox').classList.remove('hide', 'fadeHide');
-        document.getElementById('infoBox').classList.add('fadeShow');        
-        document.getElementById('subTitle').classList.add('hide');
+        document.getElementById('infoBox').classList.remove('hide');
+        document.getElementById('subTitle').classList.remove('sub-title-show');      
+        document.getElementById('subTitle').classList.add('sub-title-hide');
     }
   </script>
 

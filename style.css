@@ -109,11 +109,41 @@ body.light::before {
     animation: signatureLarge 0.5s forwards ease-in-out;
 }
 
+
+
 .sub-title {
     color: white;
     font-size: 3vw;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
+}
+
+@keyframes hideSubTitle {
+    from {
+       font-size: 3vw;
+    }
+    to {
+       font-size: 0;
+       display: none;
+    }
+}
+
+@keyframes showSubTitle {
+    from {
+        font-size: 0;
+        display: none;
+    }
+    to {
+        font-size: 3vw;
+    }
+}
+
+.sub-title.sub-title-hide {
+    animation: hideSubTitle 0.5s forwards ease-in-out;
+}
+
+.sub-title.sub-title-show {
+    animation: showSubTitle 0.5s forwards ease-in-out;
 }
 
 @media (min-width: 1000px) {
@@ -184,7 +214,6 @@ body.light::before {
 
 
 .info-box {
-   background: rgba(0, 0, 0, 0.5);
    width: calc(100% - 0px);
    height: calc(100% - 56px);
    margin: 56px 0px 0px 0px;
@@ -196,13 +225,13 @@ body.light::before {
        background: transparent;
     }
     to {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0);
     }
 }
 
 @keyframes showHide {
     from {
-       background: rgba(0, 0, 0, 0.5);
+       background: rgba(0, 0, 0, 0);
     }
     to {
        background: transparent;
