@@ -115,7 +115,7 @@ body.top {
     animation: signatureLarge 0.5s forwards ease-in-out;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 1000px) {
     .signature {
         margin-left: 2.8%;
         margin-top: 3%;
@@ -152,10 +152,10 @@ body.top {
     }
 }
 
-@media (max-width: 650px) or ((max-width: 650px) and (-webkit-min-device-pixel-ratio: 2)) {
+@media (max-width: 1000px) or ((max-width: 1000px) and (-webkit-min-device-pixel-ratio: 2)) {
     .signature {
-       margin-top: 90px;
-       margin-left: 50px;
+       margin-top: calc(10vh + 34px);
+       margin-left: 12.5vw;
     }
 
     @keyframes signatureTopLeft {
