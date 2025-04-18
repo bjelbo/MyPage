@@ -7,6 +7,7 @@ body {
     background-image: url('background.jpg');
     background-size: cover; /* Adjusts the image size */
     background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: top;
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -100,62 +101,128 @@ body.top {
 .signature {
     filter: invert(100%);
     width: 75vw;
-    margin-left: 2.8%;
-    margin-top: 3%;
     display: flex;
     position: fixed;
 }
 
-@keyframes signatureTopLeft {
-    from {
-       filter: invert(100%);
-       width: 75vw;
-       margin-left: 2.8%;
-       margin-top: 3%;
-    }
-    to {
-       filter: invert(0%);
-       width: 12vw;
-       margin-top: 4px;
-       margin-left: 4px;
-    }
+
+
+.bottom .signature {
+    animation: signatureTopLeft 0.5s forwards ease-in-out;
 }
 
-@keyframes signatureLarge {
-    from {
-       filter: invert(0%);
-       width: 12vw;
-       margin-top: 4px;
-       margin-left: 4px;
-    }
-    to {
-       filter: invert(100%);
-       width: 75vw;
-       margin-left: 2.8%;
-       margin-top: 3%;
-    }
+.top .signature {
+    animation: signatureLarge 0.5s forwards ease-in-out;
 }
 
-
-@media (min-width: 1000px) {
-   .bottom .signature {
-       animation: signatureTopLeft 0.5s forwards ease-in-out;
-   }
-
-   .top .signature {
-       animation: signatureLarge 0.5s forwards ease-in-out;
-   }
-]
-
-@media (max-width: 999px) {
+@media (min-width: 980px) {
     .signature {
-       margin-top: 34px;
+        margin-left: 2.8%;
+        margin-top: 3%;
+    }
+
+    @keyframes signatureTopLeft {
+        from {
+           filter: invert(100%);
+           width: 75vw;
+           margin-left: 2.8%;
+           margin-top: 3%;
+        }
+        to {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+    }
+    
+    @keyframes signatureLarge {
+        from {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+        to {
+           filter: invert(100%);
+           width: 75vw;
+           margin-left: 2.8%;
+           margin-top: 3%;
+        }
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 980px) {
     .signature {
-       margin-top: 60px;
+       margin-top: 50px;
+       margin-left: 50px;
+    }
+
+    @keyframes signatureTopLeft {
+        from {
+           filter: invert(100%);
+           width: 75vw;
+           margin-top: 50px;
+           margin-left: 50px;
+        }
+        to {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+    }
+    
+    @keyframes signatureLarge {
+        from {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+        to {
+           filter: invert(100%);
+           width: 75vw;
+           margin-top: 50px;
+           margin-left: 50px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .signature {
+       margin-top: 90px;
+       margin-left: 50px;
+    }
+
+    @keyframes signatureTopLeft {
+        from {
+           filter: invert(100%);
+           width: 75vw;
+           margin-top: 90px;
+           margin-left: 50px;
+        }
+        to {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+    }
+    
+    @keyframes signatureLarge {
+        from {
+           filter: invert(0%);
+           width: 175px;
+           margin-top: 0px;
+           margin-left: 4px;
+        }
+        to {
+           filter: invert(100%);
+           width: 75vw;
+           margin-top: 90px;
+           margin-left: 50px;
+        }
     }
 }
 
