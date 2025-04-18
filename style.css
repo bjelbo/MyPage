@@ -1,0 +1,200 @@
+html {
+   width: 100%;
+   height: 100%;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover; /* Adjusts the image size */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow:hidden;  
+}
+
+@keyframes moveBackgroundDown {
+    from {
+        background-position: top;
+    }
+    to {
+        background-position: bottom;
+    }
+}
+@keyframes moveBackgroundUp {
+    from {
+        background-position: bottom;
+    }
+    to {
+        background-position: top;
+    }
+}
+
+body.bottom {
+    animation: moveBackgroundDown 0.5s forwards ease-in-out;
+}
+body.top {
+    animation: moveBackgroundUp 0.5s forwards ease-in-out;
+}
+
+.navbar {
+    background-color: transparent;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-shadow: 2px 2px #00000020;
+}
+
+.navbar ul li a:hover {
+    background-color: transparent;
+    color: black;
+    box-shadow: solid;
+    cursor: pointer;
+}
+
+@keyframes colorWhiteToBlack {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+
+.bottom .navbar ul li a {
+    animation: colorWhiteToBlack 0.5s forwards ease-in-out;
+}
+
+.bottom .navbar ul li a:hover {
+    color: white !important;
+}
+
+.main-content
+{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+
+.signature {
+    filter: invert(100%);
+    width: 75vw;
+    margin-left: 2.8%;
+    margin-top: 3%;
+    display: flex;
+    position: fixed;
+}
+
+@keyframes signatureTopLeft {
+    from {
+       filter: invert(100%);
+       width: 75vw;
+       margin-left: 2.8%;
+       margin-top: 3%;
+    }
+    to {
+       filter: invert(0%);
+       width: 12vw;
+       margin-top: 4px;
+       margin-left: 4px;
+    }
+}
+
+@keyframes signatureLarge {
+    from {
+       filter: invert(0%);
+       width: 12vw;
+       margin-top: 4px;
+       margin-left: 4px;
+    }
+    to {
+       filter: invert(100%);
+       width: 75vw;
+       margin-left: 2.8%;
+       margin-top: 3%;
+    }
+}
+
+
+@media (min-width: 1000px) {
+   .bottom .signature {
+       animation: signatureTopLeft 0.5s forwards ease-in-out;
+   }
+
+   .top .signature {
+       animation: signatureLarge 0.5s forwards ease-in-out;
+   }
+]
+
+@media (max-width: 999px) {
+    .signature {
+       margin-top: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .signature {
+       margin-top: 60px;
+    }
+}
+
+
+.info-box {
+   background: #ffffff99;
+   width: calc(100% - 0px);
+   height: calc(100% - 56px);
+   margin: 56px 0px 0px 0px;
+}
+
+@keyframes hideShow {
+    from {
+       display: none;       
+       background: transparent;
+    }
+    to {
+       background: #ffffff99;
+    }
+}
+
+@keyframes showHide {
+    from {
+       background: #ffffff99;
+    }
+    to {
+       background: transparent;
+       display: none;
+    }
+}
+
+.hide {
+   display: none;
+}
+
+.fadeHide {
+   animation: showHide 0.5s forwards ease-in-out;
+}
+
+.fadeShow {
+   animation: hideShow 0.5s forwards ease-in-out;
+}

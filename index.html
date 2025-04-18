@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thomas Bjelbo</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body id="body">
+    <nav class="navbar">
+        <ul>
+            <li><a id="home">Home</a></li>
+            <li><a id="about">About</a></li>
+            <li><a id="experience">Experience</a></li>
+            <li><a id="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+      <img class="signature" alt="Thomas Bjelbo" src="signature.svg">
+      <div id="infoBox" class="info-box hide">
+      </div>
+    </div>
+  <script>
+    document.querySelectorAll('#about, #experience, #contact').forEach(element => {
+        element.addEventListener('click', addContentClasses);
+    });
+
+    document.getElementById('home').addEventListener('click', function () {
+        document.getElementById('body').classList.replace('bottom', 'top');
+        document.getElementById('infoBox').classList.replace('fadeShow', 'fadeHide');
+    });
+
+    function addContentClasses() {        
+	document.getElementById('body').classList.remove('top');        
+        document.getElementById('body').classList.add('bottom');
+        document.getElementById('infoBox').classList.remove('hide', 'fadeHide');
+        document.getElementById('infoBox').classList.add('fadeShow');
+    }
+  </script>
+
+</body>
+</html>
