@@ -162,8 +162,8 @@ body.top {
         from {
            filter: invert(100%);
            width: 75vw;
-           margin-top: 90px;
-           margin-left: 50px;
+           margin-top: calc(10vh + 34px);
+           margin-left: 12.5vw;
         }
         to {
            filter: invert(0%);
@@ -183,8 +183,8 @@ body.top {
         to {
            filter: invert(100%);
            width: 75vw;
-           margin-top: 90px;
-           margin-left: 50px;
+           margin-top: calc(10vh + 34px);
+           margin-left: 12.5vw;
         }
     }
 }
