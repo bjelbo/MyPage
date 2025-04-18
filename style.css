@@ -115,7 +115,7 @@ body.top {
     animation: signatureLarge 0.5s forwards ease-in-out;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 650px) {
     .signature {
         margin-left: 2.8%;
         margin-top: 3%;
@@ -148,43 +148,6 @@ body.top {
            width: 75vw;
            margin-left: 2.8%;
            margin-top: 3%;
-        }
-    }
-}
-
-@media (max-width: 980px) {
-    .signature {
-       margin-top: 50px;
-       margin-left: 50px;
-    }
-
-    @keyframes signatureTopLeft {
-        from {
-           filter: invert(100%);
-           width: 75vw;
-           margin-top: 50px;
-           margin-left: 50px;
-        }
-        to {
-           filter: invert(0%);
-           width: 175px;
-           margin-top: 0px;
-           margin-left: 4px;
-        }
-    }
-    
-    @keyframes signatureLarge {
-        from {
-           filter: invert(0%);
-           width: 175px;
-           margin-top: 0px;
-           margin-left: 4px;
-        }
-        to {
-           filter: invert(100%);
-           width: 75vw;
-           margin-top: 50px;
-           margin-left: 50px;
         }
     }
 }
