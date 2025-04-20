@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thomas Bjelbo</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="initials.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="body" class="dark">
+    <nav class="navbar">
+        <ul>
+            <li><a id="home">Home</a></li>
+            <li><a id="about" onclick="loadPage('about.html')">Who am I</a></li>
+            <li><a id="experience" onclick="loadPage('experience.html')">Experience</a></li>
+            <li><a id="contact" onclick="loadPage('contact.html')">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+      <div id="signature" class="signature signature-corner">
+        <img alt="Thomas Bjelbo" src="signature.svg">
+        <p id="subTitle" class="sub-title hide">Let's build software together</p>
+      </div>
+      <div id="infoBox" class="info-box">
+        <div class="container">
+          <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="text">
+            <p>Hi, I'm <strong>Thomas</strong>, a passionate <strong>Software Engineer & Architect</strong> with over <strong><span id="yearsExp"></span> years of experience</strong> in consulting and software design. Specializing in <strong>full-stack development</strong>, I thrive in crafting robust <strong>backend (.NET) solutions</strong> while ensuring seamless frontend experiences.</p>
+            
+            <p>Throughout my career, I’ve worked on <strong>high-impact projects</strong> at <strong>Netcompany</strong>, contributing to both <strong>public and private sector solutions</strong>—including the award-winning <strong>Pulse platform</strong>. My technical expertise and dedication to quality have led me to an architect role, where I lead <strong>design and strategy</strong> for innovative software solutions.</p>
+            
+            <p>Beyond work, I love <strong>sharing knowledge</strong>, whether as a <strong>guest lecturer at Aalborg University</strong> or <strong>internal course instructor</strong> at Netcompany. I’m passionate about empowering developers and fostering great software practices.</p>
+            
+            <p class="personal">But my life isn’t just about code—I’m happily married, a proud father to a wonderful daughter, and a dog lover. Balancing career and family keeps me grounded, and I wouldn’t have it any other way.</p>
+            
+            <p style="text-align:center; font-weight:bold;">Let's build great software together!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    calculateExperience();
+  </script>
+
+</body>
+</html>

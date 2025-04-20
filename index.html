@@ -5,46 +5,28 @@
   <meta charset="utf-8">
   <title>Thomas Bjelbo</title>
   <link href="style.css" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="initials.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body id="body">
     <nav class="navbar">
         <ul>
             <li><a id="home">Home</a></li>
-            <li><a id="about">About</a></li>
-            <li><a id="experience">Experience</a></li>
-            <li><a id="contact">Contact</a></li>
+            <li><a id="about" onclick="loadPage('about.html')">Who am I</a></li>
+            <li><a id="experience" onclick="loadPage('experience.html')">Experience</a></li>
+            <li><a id="contact" onclick="loadPage('contact.html')">Contact</a></li>
         </ul>
     </nav>
     <div class="main-content">
-      <div class="signature">
+      <div id="signature" class="signature">
         <img alt="Thomas Bjelbo" src="signature.svg">
         <p id="subTitle" class="sub-title">Let's build software together</p>
       </div>
       <div id="infoBox" class="info-box hide">
       </div>
     </div>
-  <script>
-    document.querySelectorAll('#about, #experience, #contact').forEach(element => {
-        element.addEventListener('click', addContentClasses);
-    });
-
-    document.getElementById('home').addEventListener('click', function () {
-        document.getElementById('body').classList.replace('dark', 'light');
-        document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
-        document.getElementById('infoBox').classList.add('hide'); 
-        setTimeout(function(){
-          document.getElementById('subTitle').classList.remove('hide');
-        }, 500)        
-    });
-
-    function addContentClasses() {        
-	      document.getElementById('body').classList.remove('light');        
-        document.getElementById('body').classList.add('dark');
-        document.getElementById('infoBox').classList.remove('hide');
-        document.getElementById('subTitle').classList.remove('sub-title-show');      
-        document.getElementById('subTitle').classList.add('sub-title-hide');
-    }
-  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scripts.js"></script>
 
 </body>
 </html>

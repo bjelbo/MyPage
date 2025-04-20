@@ -11,7 +11,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    overflow:hidden;  
+    overflow:hidden; 
 }
 
 body::before {
@@ -97,6 +97,12 @@ body.light::before {
     position: fixed;
 }
 
+.signature.signature-corner {
+    width: 175px !important;
+    margin-top: 0px !important;
+    margin-left: 4px !important;
+}
+
 .signature img {
     filter: invert(100%);
 }
@@ -180,6 +186,9 @@ body.light::before {
 }
 
 @media (max-width: 1000px) or ((max-width: 1000px) and (-webkit-min-device-pixel-ratio: 2)) {
+    body {
+        font-size: 1.5rem;
+    }
     .signature {
        margin-top: calc(10vh + 34px);
        margin-left: 12.5vw;
@@ -217,6 +226,8 @@ body.light::before {
    width: calc(100% - 0px);
    height: calc(100% - 56px);
    margin: 56px 0px 0px 0px;
+   overflow-y: auto;
+   font-size: 1em;
 }
 
 @keyframes hideShow {
@@ -249,4 +260,119 @@ body.light::before {
 
 .fadeShow {
    animation: hideShow 0.5s forwards ease-in-out;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    text-align: center;
+    color: white;
+}
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    margin-bottom: 20px;
+}
+.container h1 {
+    margin-bottom: 10px;
+}
+.personal {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+h1, h2 {
+    text-align: center;
+}
+.section {
+    margin-bottom: 30px;
+    border-top: 3px solid #666;
+    padding-top: 20px;
+}
+.job-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-top: 1px solid #66666630;
+    padding-top: 20px;
+}
+.job-date {
+    font-style: italic;
+    color: #ffffff;
+}
+ul {
+    padding-left: 20px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+}
+.form-group {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.label {
+    font-weight: bold;
+    width: 110px; /* Adjust for label size */
+    text-align: right;
+}
+.input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.textarea-field {
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+.submit-btn {
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    width: calc(100% - 130px);
+}
+.submit-btn:hover {
+    background: #0056b3;
+}
+.or-line {
+    line-height: 0px;
+    margin: 30px 0;
+    display: flex;
+    width: 100%;
+}
+.or-line > div {
+    width:  10%
+}
+.or-line > hr {
+    width: 45%;
+    margin: 0;
+    border-color:#666;
+}
+.contact-info {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+.contact-info i {
+    font-size: 1.5em;
+}
+.contact-info a {
+    color: white;
 }
