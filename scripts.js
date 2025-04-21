@@ -1,5 +1,5 @@
 document.getElementById('home').addEventListener('click', function () {
-    window.history.pushState({page: "new"}, 'Home', "/");
+    window.history.replaceState({page: "updated"}, 'Home', "/");
     document.getElementById('body').classList.replace('dark', 'light');
     document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
     document.getElementById('infoBox').classList.add('hide');
@@ -22,7 +22,7 @@ function addContentClasses() {
 function loadPage(name, url) {
   addContentClasses();
   $.get(url, function(data) {
-    window.history.pushState({page: "new"}, name, "/"+url);
+    window.history.replaceState({page: "replaced"}, name, "/"+url.replace(".html", ""));
     var storedHTML = $(data);
     $('#infoBox').html($(storedHTML.find("#infoBox")).html())
     calculateExperience();
