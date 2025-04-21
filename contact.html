@@ -11,9 +11,9 @@
     <nav class="navbar">
         <ul>
             <li><a id="home">Home</a></li>
-            <li><a id="about" onclick="loadPage('about.html')">Who am I</a></li>
-            <li><a id="experience" onclick="loadPage('experience.html')">Experience</a></li>
-            <li><a id="contact" onclick="loadPage('contact.html')">Contact</a></li>
+            <li><a id="about" onclick="loadPage('About','about.html')">Who am I</a></li>
+            <li><a id="experience" onclick="loadPage('Experience','experience.html')">Experience</a></li>
+            <li><a id="contact" onclick="loadPage('Contact','contact.html')">Contact</a></li>
         </ul>
     </nav>
     <div class="main-content">
@@ -38,7 +38,7 @@
           <div class="or-line"><hr><div>or</div><hr></div>
           <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
             <input type="hidden" name="access_key" value="512369a1-a863-4cdf-a486-2a91676021ea">
-            
+            <input type="hidden" name="redirect" value="https://thomasbjelbo.dk/thankyou">
             <div class="form-group">
                 <label for="name" class="label">Name:</label>
                 <input type="text" id="name" name="name" required class="input-field">
@@ -57,11 +57,10 @@
         </div>
       </div>
     </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="scripts.js"></script>
-  <script>
-    calculateExperience();
-  </script>
-
 </body>
+<footer>
+  <p>&copy; Thomas Bjelbo <span id="footerYear"></span></p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="scripts.js"></script>
 </html>

@@ -1,4 +1,5 @@
 document.getElementById('home').addEventListener('click', function () {
+    window.history.pushState({page: "new"}, 'Home', "/");
     document.getElementById('body').classList.replace('dark', 'light');
     document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
     document.getElementById('infoBox').classList.add('hide');
@@ -8,6 +9,8 @@ document.getElementById('home').addEventListener('click', function () {
     }, 500)        
 });
 
+document.getElementById('footerYear').innerText = new Date().getFullYear();
+
 function addContentClasses() {        
     document.getElementById('body').classList.remove('light');        
     document.getElementById('body').classList.add('dark');
@@ -16,9 +19,10 @@ function addContentClasses() {
     document.getElementById('subTitle').classList.add('sub-title-hide');
 }
 
-function loadPage(url) {
+function loadPage(name, url) {
   addContentClasses();
   $.get(url, function(data) {
+    window.history.pushState({page: "new"}, name, "/"+url);
     var storedHTML = $(data);
     $('#infoBox').html($(storedHTML.find("#infoBox")).html())
     calculateExperience();
@@ -37,6 +41,7 @@ function calculateExperience() {
     ) {
         yearsDiff--;
     }
-
-    document.getElementById("yearsExp").innerText = yearsDiff;
+    if(document.getElementById("yearsExp")){
+      document.getElementById("yearsExp").innerText = yearsDiff;
+    }
 }
