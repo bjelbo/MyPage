@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thomas Bjelbo</title>
   <link href="style.css" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="initials.svg">
@@ -39,28 +40,39 @@
 </head>
 <body id="body">
     <nav class="navbar">
-        <ul>
-            <li><a id="home">Home</a></li>
-            <li><a id="about" onclick="loadPage('Who am I','about.html')">Who am I</a></li>
-            <li><a id="experience" onclick="loadPage('Experience','experience.html')">Experience</a></li>
-            <li><a id="contact" onclick="loadPage('Contact','contact.html')">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a onclick="homePage()">Home</a></li>
+        <li><a onclick="loadPage('Who am I','about.html')">Who am I</a></li>
+        <li><a onclick="loadPage('Experience','experience.html')">Experience</a></li>
+        <li><a onclick="loadPage('Contact','contact.html')">Contact</a></li>
+      </ul>
     </nav>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
+    <nav class="side-menu" id="sideMenu">
+      <ul>
+        <li><a onclick="homePage()">Home</a></li>
+        <li><a onclick="loadPage('Who am I','about.html')">Who am I</a></li>
+        <li><a onclick="loadPage('Experience','experience.html')">Experience</a></li>
+        <li><a onclick="loadPage('Contact','contact.html')">Contact</a></li>
+      </ul>
+    </nav>    
+    
+    <div id="signature" class="signature">
+      <img alt="Thomas Bjelbo" src="signature.svg">
+      <p id="subTitle" class="sub-title">Let's build software together</p>
+    </div>
     <div class="main-content">
-      <div id="signature" class="signature">
-        <img alt="Thomas Bjelbo" src="signature.svg">
-        <p id="subTitle" class="sub-title">Let's build software together</p>
-      </div>
       <div id="infoBox" class="info-box hide">
-      </div>
+        
+      </div>      
+      <footer>
+        <p>&copy; Thomas Bjelbo <span id="footerYear"></span></p>
+      </footer>
     </div>
     <div class="cookie" onclick="toggleElement('cookieText')">
       <span id="cookieText" class="cookie-text hide">Don't worry, no cookies stored here!</span><i class="fa fa-cookie-bite"></i>
     </div>
 </body>
-<footer>
-  <p>&copy; Thomas Bjelbo <span id="footerYear"></span></p>
-</footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="scripts.js"></script>
 </html>

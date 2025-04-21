@@ -1,16 +1,17 @@
-document.getElementById('home').addEventListener('click', function () {
-    window.history.replaceState({page: "updated"}, 'Home', "/");
-    document.getElementById('body').classList.replace('dark', 'light');
-    document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
-    document.getElementById('infoBox').classList.add('hide');
-    document.getElementById('infoBox').innerHTML = "";
-    document.getElementById('signature').classList.remove('signature-corner'); 
-    setTimeout(function(){
-      document.getElementById('subTitle').classList.remove('hide');
-    }, 500)        
-});
-
 document.getElementById('footerYear').innerText = new Date().getFullYear();
+
+function homePage(){
+  window.history.replaceState({page: "updated"}, 'Home', "/");
+  document.getElementById('body').classList.replace('dark', 'light');
+  document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
+  document.getElementById('infoBox').classList.add('hide');
+  document.getElementById('infoBox').innerHTML = "";
+  document.getElementById('signature').classList.remove('signature-corner');   
+  toggleMenu();
+  setTimeout(function(){
+    document.getElementById('subTitle').classList.remove('hide');
+  }, 500) 
+}
 
 function addContentClasses() {        
     document.getElementById('body').classList.remove('light');        
@@ -27,6 +28,7 @@ function loadPage(name, url) {
     var storedHTML = $(data);
     $('#infoBox').html($(storedHTML.find("#infoBox")).html())
     calculateExperience();
+    toggleMenu();
   });
 }
 
@@ -56,4 +58,17 @@ function calculateExperience() {
     if(document.getElementById("yearsExp")){
       document.getElementById("yearsExp").innerText = yearsDiff;
     }
+}
+
+
+function toggleMenu() {
+  var sideMenu = document.getElementById('sideMenu');
+  var menuToggle = document.getElementById('menuToggle');
+  if (sideMenu.style.display === 'block') {
+    sideMenu.style.display = 'none';
+    menuToggle.innerText = '☰'
+  } else {
+    sideMenu.style.display = 'block';    
+    menuToggle.innerText = '✕'
+  }
 }

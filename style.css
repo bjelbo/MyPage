@@ -28,10 +28,10 @@ body::before {
 
 footer {
     font-size: 14px;
-    position: fixed;
-    bottom: 0;
-    left: 10px;
+    margin-left: 10px;
+    text-align: start;
     color: white;
+    margin-top: auto;
 }
 
 ::-webkit-scrollbar {
@@ -75,46 +75,115 @@ body.light::before {
     animation: adjustBackdropLight 0.5s forwards ease-in-out;
 }
 
+
 .navbar {
+    display: flex;
+    justify-content: space-around;
     background-color: transparent;
-    padding: 15px 0;
     position: fixed;
-    width: 100%;
+    width: 100%;    
     z-index: 1;
 }
 
 .navbar ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
 }
 
-.navbar ul li {
-    margin: 0 15px;
+.navbar li {
+    padding: 14px 20px;
 }
 
-.navbar ul li a {
-    text-decoration: none;
+.navbar a {
     color: white;
-    font-size: 18px;
-    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
     text-shadow: 2px 2px #00000020;
 }
 
-.navbar ul li a:hover {
+.navbar a:hover {
     background-color: transparent;
     color: rgb(211, 211, 211);
     box-shadow: solid;
     cursor: pointer;
 }
 
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(47 52 61);
+    padding-top: 60px;
+    z-index: 1;
+    text-align: end;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 8px 16px;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.side-menu a:hover {
+    color: rgb(211, 211, 211);  
+}
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@media screen and (min-width: 750px) {
+    .side-menu {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .side-menu {
+        width: 100%;
+    }
+}
+
 .main-content
 {
    position: absolute;
    width: 100%;
-   height: 100%;
+   height: calc(100% - 56px);
+   margin: 56px 0px 0px 0px;
+   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
 }
 
 
@@ -213,7 +282,7 @@ body.light::before {
 
 @media (max-width: 1000px) or ((max-width: 1000px) and (-webkit-min-device-pixel-ratio: 2)) {
     body {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .signature {
        margin-top: calc(10vh + 34px);
@@ -249,10 +318,7 @@ body.light::before {
 
 
 .info-box {
-   width: calc(100% - 0px);
-   height: calc(100% - 56px);
-   margin: 56px 0px 0px 0px;
-   overflow-y: auto;
+   width: 100%;
    font-size: 1em;
 }
 
