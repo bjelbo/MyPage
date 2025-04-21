@@ -172,6 +172,7 @@ body.light::before {
 @media screen and (max-width: 450px) {
     .side-menu {
         width: 100%;
+        font-size: 4em;
     }
 }
 
