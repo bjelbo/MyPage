@@ -3,6 +3,7 @@ document.getElementById('home').addEventListener('click', function () {
     document.getElementById('body').classList.replace('dark', 'light');
     document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
     document.getElementById('infoBox').classList.add('hide');
+    document.getElementById('infoBox').innerHTML = "";
     document.getElementById('signature').classList.remove('signature-corner'); 
     setTimeout(function(){
       document.getElementById('subTitle').classList.remove('hide');
