@@ -412,6 +412,10 @@ ul {
     display: flex;
     align-items: center;
 }
+.cookie:hover {
+    background: #0056b3;
+    cursor: pointer;
+}
 .cookie-text {
     width: 300px;
     font-size: 18px;
