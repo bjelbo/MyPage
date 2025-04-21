@@ -29,6 +29,17 @@ function loadPage(name, url) {
   });
 }
 
+function toggleElement(id) {
+  var element = document.getElementById(id);
+  if(element.classList.contains('cookieShow')){    
+    element.classList.replace('cookieShow', 'cookieHide');
+  }
+  else {    
+    element.classList.remove('hide', 'cookieHide');
+    element.classList.add('cookieShow');
+  }
+}
+
 function calculateExperience() {
     const startDate = new Date("2019-03-13");
     const currentDate = new Date();

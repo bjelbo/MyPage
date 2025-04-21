@@ -8,6 +8,7 @@ body {
     background-size: cover; /* Adjusts the image size */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: top;
+    background-color: #000;
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -383,4 +384,52 @@ ul {
 }
 .contact-info a {
     color: white;
+}
+.cookie {
+    color: white;
+    background-color: rgb(47 52 61);
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    bottom: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.cookie-text {
+    width: 300px;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cookie i {
+    font-size: 36px;
+}
+
+@keyframes cookieHideShow {
+    from {
+       display: none;       
+       width: 0px;
+    }
+    to {
+        width: 300px;
+    }
+}
+
+@keyframes cookieShowHide {
+    from {
+       width: 300px;
+    }
+    to {
+       display: none;       
+       width: 0px;
+    }
+}
+
+.cookieHide {
+   animation: cookieShowHide 0.5s forwards ease-in-out;
+}
+
+.cookieShow {
+   animation: cookieHideShow 0.5s forwards ease-in-out;
 }
