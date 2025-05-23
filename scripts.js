@@ -1,7 +1,30 @@
 document.getElementById('footerYear').innerText = new Date().getFullYear();
 
-function homePage(){
-  window.history.replaceState({page: "updated"}, 'Home', "/");
+window.addEventListener('popstate', (event) => {
+  var prevUrl = event.state?.url;
+  if(!prevUrl){
+    return;
+  }
+   
+  if(prevUrl === "/"){
+    homePage(false);
+    return;
+  }
+
+  loadPage(event.state.name, event.state.url, false);  
+});
+
+$(document).ready(function() {
+  var url = window.location.pathname;  
+  window.history.replaceState(
+    {name: "", url: url === "/" || url.endsWith(".html") ? url : url + ".html"}, 
+    "", url.replace(".html", ""));  
+});
+
+function homePage(pushState = true){
+  if(pushState && window.location.pathname !== "/") {
+    window.history.pushState({name: "Home", url: "/"}, "Home", "/");
+  };
   document.getElementById('body').classList.replace('dark', 'light');
   document.getElementById('subTitle').classList.replace('sub-title-hide', 'sub-title-show');
   document.getElementById('infoBox').classList.add('hide');
@@ -21,10 +44,13 @@ function addContentClasses() {
     document.getElementById('subTitle').classList.add('sub-title-hide');
 }
 
-function loadPage(name, url) {
+function loadPage(name, url, pushState = true) {
   addContentClasses();
   $.get(url, function(data) {
-    window.history.replaceState({page: "replaced"}, name, "/"+url.replace(".html", ""));
+    var newUrl = "/"+url.replace(".html", "");
+    if(pushState && window.location.pathname !== newUrl) {
+      window.history.pushState({name, url}, name, newUrl);
+    }    
     var storedHTML = $(data);
     $('#infoBox').html($(storedHTML.find("#infoBox")).html())
     calculateExperience();
