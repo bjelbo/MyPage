@@ -30,7 +30,7 @@ function homePage(pushState = true){
   document.getElementById('infoBox').classList.add('hide');
   document.getElementById('infoBox').innerHTML = "";
   document.getElementById('signature').classList.remove('signature-corner');   
-  toggleMenu();
+  toggleMenu(hide = true);
   setTimeout(function(){
     document.getElementById('subTitle').classList.remove('hide');
   }, 500) 
@@ -54,7 +54,7 @@ function loadPage(name, url, pushState = true) {
     var storedHTML = $(data);
     $('#infoBox').html($(storedHTML.find("#infoBox")).html())
     calculateExperience();
-    toggleMenu();
+    toggleMenu(hide = true);
   });
 }
 
@@ -87,10 +87,10 @@ function calculateExperience() {
 }
 
 
-function toggleMenu() {
+function toggleMenu(hide = false) {
   var sideMenu = document.getElementById('sideMenu');
   var menuToggle = document.getElementById('menuToggle');
-  if (sideMenu.style.display === 'block') {
+  if (hide || sideMenu.style.display === 'block') {
     sideMenu.style.display = 'none';
     menuToggle.innerText = '☰'
   } else {
