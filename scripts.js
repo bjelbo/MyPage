@@ -70,7 +70,7 @@ function toggleElement(id) {
 }
 
 function calculateExperience() {
-    const startDate = new Date("2019-03-13");
+    const startDate = new Date("2018-01-01");
     const currentDate = new Date();
     let yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
 
